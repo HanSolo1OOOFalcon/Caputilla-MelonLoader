@@ -22,7 +22,7 @@ namespace CaputillaMelonLoader.Patches
     {
         public static void Postfix(FusionHub __instance)
         {
-            if (CaputillaHub.Instance.inModdedRoom)
+            if (CaputillaHub.InModdedRoom)
                 CaputillaHub.Instance.InvokeOnModdedLeave();
         }
     }

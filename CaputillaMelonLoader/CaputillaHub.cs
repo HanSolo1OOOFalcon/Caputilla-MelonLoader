@@ -4,21 +4,21 @@ namespace CaputillaMelonLoader
 {
     public class CaputillaHub : MonoBehaviour
     {
-        public static CaputillaHub? Instance;
+        internal static CaputillaHub? Instance;
 
         public static event Action? OnModdedJoin, OnModdedLeave, OnGameInitialized;
-        public bool inModdedRoom { get; private set; }
+        public static bool InModdedRoom { get; private set; }
 
         internal void InvokeOnModdedJoin()
         {
             OnModdedJoin?.Invoke();
-            inModdedRoom = true;
+            InModdedRoom = true;
         }
 
         internal void InvokeOnModdedLeave()
         {
             OnModdedLeave?.Invoke();
-            inModdedRoom = false;
+            InModdedRoom = false;
         }
 
         internal void InvokeOnGameInitialized() => OnGameInitialized?.Invoke();
